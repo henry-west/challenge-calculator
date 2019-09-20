@@ -1,0 +1,17 @@
+D:\workspace\challenge-calculator\challenge-calculator-test\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.dll
+D:\workspace\challenge-calculator\challenge-calculator-test\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.pdb
+D:\workspace\challenge-calculator\challenge-calculator-test\bin\Debug\netcoreapp2.2\nunit.engine.netstandard.dll
+D:\workspace\challenge-calculator\challenge-calculator-test\bin\Debug\netcoreapp2.2\challenge-calculator-test.deps.json
+D:\workspace\challenge-calculator\challenge-calculator-test\bin\Debug\netcoreapp2.2\challenge-calculator-test.runtimeconfig.json
+D:\workspace\challenge-calculator\challenge-calculator-test\bin\Debug\netcoreapp2.2\challenge-calculator-test.runtimeconfig.dev.json
+D:\workspace\challenge-calculator\challenge-calculator-test\bin\Debug\netcoreapp2.2\challenge-calculator-test.dll
+D:\workspace\challenge-calculator\challenge-calculator-test\bin\Debug\netcoreapp2.2\challenge-calculator-test.pdb
+D:\workspace\challenge-calculator\challenge-calculator-test\bin\Debug\netcoreapp2.2\challenge-calculator.dll
+D:\workspace\challenge-calculator\challenge-calculator-test\bin\Debug\netcoreapp2.2\challenge-calculator.pdb
+D:\workspace\challenge-calculator\challenge-calculator-test\obj\Debug\netcoreapp2.2\challenge-calculator-test.csprojAssemblyReference.cache
+D:\workspace\challenge-calculator\challenge-calculator-test\obj\Debug\netcoreapp2.2\challenge-calculator-test.csproj.CoreCompileInputs.cache
+D:\workspace\challenge-calculator\challenge-calculator-test\obj\Debug\netcoreapp2.2\challenge-calculator-test.AssemblyInfoInputs.cache
+D:\workspace\challenge-calculator\challenge-calculator-test\obj\Debug\netcoreapp2.2\challenge-calculator-test.AssemblyInfo.cs
+D:\workspace\challenge-calculator\challenge-calculator-test\obj\Debug\netcoreapp2.2\challenge-calculator-test.csproj.CopyComplete
+D:\workspace\challenge-calculator\challenge-calculator-test\obj\Debug\netcoreapp2.2\challenge-calculator-test.dll
+D:\workspace\challenge-calculator\challenge-calculator-test\obj\Debug\netcoreapp2.2\challenge-calculator-test.pdb

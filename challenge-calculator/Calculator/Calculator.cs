@@ -31,6 +31,11 @@ namespace challenge_calculator
         {
             return nums.Sum();
         }
+
+        public int GetNumCount()
+        {
+            return nums.Count();
+        }
     }
 
 }

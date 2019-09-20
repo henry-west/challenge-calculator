@@ -13,10 +13,7 @@ namespace challenge_calculator
                 var nums = args[0].Split(",");
                 var calc = new Calculator(nums);
 
-                if (nums.Length <= 2)
-                {
-                    Console.WriteLine(calc.GetSum());
-                }
+                Console.WriteLine(calc.GetSum());
             }
         }
     }
