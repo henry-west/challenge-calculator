@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "challenge-calculator": {
+      "commandName": "Project",
+      "commandLineArgs": "2,x"
+    }
+  }
+}

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 
 namespace challenge_calculator
@@ -10,9 +11,11 @@ namespace challenge_calculator
             if (args.Length > 0)
             {
                 var nums = args[0].Split(",");
-                if (nums.Length == 2)
+                var calc = new Calculator(nums);
+
+                if (nums.Length <= 2)
                 {
-                    Console.WriteLine(nums.Sum(x => Int32.Parse(x)));
+                    Console.WriteLine(calc.GetSum());
                 }
             }
         }
