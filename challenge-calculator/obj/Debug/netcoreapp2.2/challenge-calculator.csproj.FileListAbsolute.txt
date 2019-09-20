@@ -1,0 +1,11 @@
+D:\workspace\challenge-calculator\challenge-calculator\bin\Debug\netcoreapp2.2\challenge-calculator.deps.json
+D:\workspace\challenge-calculator\challenge-calculator\bin\Debug\netcoreapp2.2\challenge-calculator.runtimeconfig.json
+D:\workspace\challenge-calculator\challenge-calculator\bin\Debug\netcoreapp2.2\challenge-calculator.runtimeconfig.dev.json
+D:\workspace\challenge-calculator\challenge-calculator\bin\Debug\netcoreapp2.2\challenge-calculator.dll
+D:\workspace\challenge-calculator\challenge-calculator\bin\Debug\netcoreapp2.2\challenge-calculator.pdb
+D:\workspace\challenge-calculator\challenge-calculator\obj\Debug\netcoreapp2.2\challenge-calculator.csprojAssemblyReference.cache
+D:\workspace\challenge-calculator\challenge-calculator\obj\Debug\netcoreapp2.2\challenge-calculator.csproj.CoreCompileInputs.cache
+D:\workspace\challenge-calculator\challenge-calculator\obj\Debug\netcoreapp2.2\challenge-calculator.AssemblyInfoInputs.cache
+D:\workspace\challenge-calculator\challenge-calculator\obj\Debug\netcoreapp2.2\challenge-calculator.AssemblyInfo.cs
+D:\workspace\challenge-calculator\challenge-calculator\obj\Debug\netcoreapp2.2\challenge-calculator.dll
+D:\workspace\challenge-calculator\challenge-calculator\obj\Debug\netcoreapp2.2\challenge-calculator.pdb
