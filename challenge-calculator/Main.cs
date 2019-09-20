@@ -10,7 +10,9 @@ namespace challenge_calculator
         {
             if (args.Length > 0)
             {
-                var nums = args[0].Split(",");
+                var formatter = new InputFormatter();
+                var nums = formatter.GetFormattedString(args[0]);
+
                 var calc = new Calculator(nums);
 
                 Console.WriteLine(calc.GetSum());
