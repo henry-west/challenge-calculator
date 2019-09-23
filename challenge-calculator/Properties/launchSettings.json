@@ -2,7 +2,7 @@
   "profiles": {
     "challenge-calculator": {
       "commandName": "Project",
-      "commandLineArgs": "2,3\\n4"
+      "commandLineArgs": "2,3\\n-4,5"
     }
   }
 }

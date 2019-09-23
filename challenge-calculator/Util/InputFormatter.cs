@@ -13,7 +13,7 @@ namespace challenge_calculator
 
         public InputFormatter()
         {
-            pattern = @",|\\n";
+            pattern = @",|\n|\\n";
             regex = new Regex(pattern);
         }
 

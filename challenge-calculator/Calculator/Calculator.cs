@@ -8,18 +8,40 @@ namespace challenge_calculator
 {
     public class Calculator
     {
-        public Calculator(string[] args)
+        private List<int> nums;
+        private List<int> negativeValues;
+
+        public Calculator()
         {
-            nums = args.Select(x => TryParseInt(x));
+            negativeValues = new List<int>();
+            nums = new List<int>();
         }
 
-        private IEnumerable<int> nums { get; }
+        public void ParseList(string[] numList)
+        {
+            nums = numList.Select(x => GetValidIntFromString(x)).ToList();
 
-        public int TryParseInt(string value)
+            if (negativeValues.Count > 0)
+            {
+                throw new Exception($"Negative numbers not allowed: {String.Join(", ", negativeValues)}");
+            }
+        }
+
+        public int GetValidIntFromString(string value)
         {
             try
             {
-                return Int32.Parse(value);
+                var num = Int32.Parse(value);
+
+                if (num < 0)
+                {
+                    negativeValues.Add(num);
+                    return 0;
+                }
+                else
+                {
+                    return num;
+                }
             }
             catch (Exception)
             {

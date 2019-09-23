@@ -7,11 +7,18 @@ namespace Tests
     public class CalculatorTest
     {
         private Calculator sut;
+
+        [SetUp]
+        public void SetUp()
+        {
+            sut = new Calculator();
+        }
+
         [Test]
         public void ShouldCountNonDigitsAsZero()
         {
             var args = new String[] {"1", "x"};
-            sut = new Calculator(args);
+            sut.ParseList(args);
 
             Assert.That(sut.GetNumCount(), Is.EqualTo(2));
             Assert.That(sut.GetSum(), Is.EqualTo(1));
@@ -21,7 +28,7 @@ namespace Tests
         public void ShouldAcceptTwoDigitsInArgs()
         {
             var args = new String[] { "1", "3" };
-            var sut = new Calculator(args);
+            sut.ParseList(args);
 
             Assert.That(sut.GetNumCount(), Is.EqualTo(2));
         }
@@ -30,7 +37,7 @@ namespace Tests
         public void ListWithNoDigitsShouldReturnZeroSum()
         {
             var args = new String[] { "x", "y" };
-            sut = new Calculator(args);
+            sut.ParseList(args);
 
             Assert.That(sut.GetNumCount(), Is.EqualTo(2));
             Assert.That(sut.GetSum(), Is.EqualTo(0));
@@ -39,27 +46,37 @@ namespace Tests
         [Test]
         public void ParseIntReturnsZeroWhenNonDigit()
         {
-            sut = new Calculator(new string[0]);
+            sut = new Calculator();
 
-            Assert.That(sut.TryParseInt("a"), Is.EqualTo(0));
+            Assert.That(sut.GetValidIntFromString("a"), Is.EqualTo(0));
         }
 
         [Test]
         public void ParseIntReturnsInt()
         {
-            sut = new Calculator(new string[0]);
+            sut = new Calculator();
 
-            Assert.That(sut.TryParseInt("5"), Is.EqualTo(5));
+            Assert.That(sut.GetValidIntFromString("5"), Is.EqualTo(5));
         }
 
         [Test]
         public void CanAddAnyNumberOfArgs()
         {
             var args = new String[] { "1","2","3","4","5","6","7","8","9","10","11","12" };
-            sut = new Calculator(args);
+            sut.ParseList(args);
 
             Assert.That(sut.GetNumCount(), Is.EqualTo(12));
             Assert.That(sut.GetSum(), Is.EqualTo(78));
+        }
+
+        [Test]
+        public void ShouldThrowExceptionOnNegativeValue()
+        {
+            var args = new String[] { "1", "-3", "-12" };
+
+            var result = Assert.Throws<Exception>(() => sut.ParseList(args));
+
+            Assert.That(result.Message, Is.EqualTo("Negative numbers not allowed: -3, -12"));
         }
     }
 }

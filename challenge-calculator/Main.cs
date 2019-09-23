@@ -13,9 +13,10 @@ namespace challenge_calculator
                 var formatter = new InputFormatter();
                 var nums = formatter.GetFormattedString(args[0]);
 
-                var calc = new Calculator(nums);
+                var calc = new Calculator();
+                calc.ParseList(nums);
 
-                Console.WriteLine(calc.GetSum());
+                Console.WriteLine($"Sum: {calc.GetSum()}");
             }
         }
     }
