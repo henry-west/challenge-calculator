@@ -32,7 +32,7 @@ namespace challenge_calculator
         {
             if (args.StartsWith("//"))
             {
-                var split = args.Split(@"\\n", 2);
+                var split = args.Split(@"\n", 2);
                 var customDelim = split[0];
                 var nums = split[1];
                 SetCustomDelimIfExists(customDelim);

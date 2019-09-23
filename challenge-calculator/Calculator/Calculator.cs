@@ -6,11 +6,12 @@ namespace challenge_calculator
 {
     public class Calculator
     {
-        public const int MAXIMUM_VALUE = 1000;
-
         private List<int> nums;
         private readonly List<int> negativeValues;
+
         public char Operation = '+';
+        public int MaxValue = 1000;
+        public bool AllowNegative = false;
 
         public Calculator()
         {
@@ -34,12 +35,12 @@ namespace challenge_calculator
             {
                 var num = Int32.Parse(value);
 
-                if (num < 0)
+                if (!AllowNegative && num < 0)
                 {
                     negativeValues.Add(num);
                     return 0;
                 }
-                else if (num > MAXIMUM_VALUE)
+                else if (num > MaxValue)
                 {
                     return 0;
                 }

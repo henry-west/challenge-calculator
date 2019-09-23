@@ -1,5 +1,4 @@
-﻿using System;
-using challenge_calculator;
+﻿using challenge_calculator;
 using NUnit.Framework;
 
 namespace Tests
@@ -41,7 +40,7 @@ namespace Tests
         [Test]
         public void ShouldSetCustomSingleCharDelim()
         {
-            var result = sut.GetNumListFromString(@"//^\\n2^3^4");
+            var result = sut.GetNumListFromString(@"//^\n2^3^4");
 
             Assert.That(result, Has.Length.EqualTo(3));
         }
@@ -49,7 +48,7 @@ namespace Tests
         [Test]
         public void CustomDelimShouldWorkAlongsideDefaults()
         {
-            var result = sut.GetNumListFromString(@"//^\\n2^3,4\\n5");
+            var result = sut.GetNumListFromString(@"//^\n2^3,4\\n5");
 
             Assert.That(result, Has.Length.EqualTo(3));
         }
@@ -57,7 +56,7 @@ namespace Tests
         [Test]
         public void ShouldSetCustomMultiCharDelim()
         {
-            var result = sut.GetNumListFromString(@"//[**]\\n2**3**4");
+            var result = sut.GetNumListFromString(@"//[**]\n2**3**4");
 
             Assert.That(result, Has.Length.EqualTo(3));
         }
@@ -65,7 +64,7 @@ namespace Tests
         [Test]
         public void ShouldAllowMultipleMultiCharDelims()
         {
-            var result = sut.GetNumListFromString(@"//[**][$$]\\n2**3$$4");
+            var result = sut.GetNumListFromString(@"//[**][$$]\n2**3$$4");
 
             Assert.That(result, Has.Length.EqualTo(3));
         }
@@ -73,7 +72,7 @@ namespace Tests
         [Test]
         public void MultiCharDelimsShouldWorkWithDefaults()
         {
-            var result = sut.GetNumListFromString(@"//[**][$$]\\n2**3$$4,5");
+            var result = sut.GetNumListFromString(@"//[**][$$]\n2**3$$4,5");
 
             Assert.That(result, Has.Length.EqualTo(4));
         }
@@ -81,7 +80,7 @@ namespace Tests
         [Test]
         public void MultiCharDelimsOfVaryingLengthsShouldWork()
         {
-            var result = sut.GetNumListFromString(@"//[**][$*$][a]\\n2**3$*$4a5");
+            var result = sut.GetNumListFromString(@"//[**][$*$][a]\n2**3$*$4a5");
 
             Assert.That(result, Has.Length.EqualTo(4));
         }
