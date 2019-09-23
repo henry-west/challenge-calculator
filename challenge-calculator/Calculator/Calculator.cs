@@ -9,7 +9,7 @@ namespace challenge_calculator
         public const int MAXIMUM_VALUE = 1000;
 
         private List<int> nums;
-        private List<int> negativeValues;
+        private readonly List<int> negativeValues;
 
         public Calculator()
         {
