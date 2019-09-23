@@ -8,11 +8,16 @@ namespace Tests
     {
         private InputFormatter sut;
 
+        [SetUp]
+        public void SetUp()
+        {
+            sut = new InputFormatter();
+        }
+
         [Test]
         public void ShouldSplitStringOnComma()
         {
-            sut = new InputFormatter();
-            var result = sut.GetFormattedString("1,2,3");
+            var result = sut.GetNumListFromString("1,2,3");
 
             Assert.That(result, Has.Length.EqualTo(3));
         }
@@ -20,8 +25,7 @@ namespace Tests
         [Test]
         public void ShouldSplitStringOnNewline()
         {
-            sut = new InputFormatter();
-            var result = sut.GetFormattedString("1\n2\n3");
+            var result = sut.GetNumListFromString("1\n2\n3");
 
             Assert.That(result, Has.Length.EqualTo(3));
         }
@@ -29,8 +33,23 @@ namespace Tests
         [Test]
         public void ShouldSplitStringOnCommaAndNewline()
         {
-            sut = new InputFormatter();
-            var result = sut.GetFormattedString("1\n2,3");
+            var result = sut.GetNumListFromString("1\n2,3");
+
+            Assert.That(result, Has.Length.EqualTo(3));
+        }
+
+        [Test]
+        public void ShouldSetCustomSingleCharDelim()
+        {
+            var result = sut.GetNumListFromString(@"//^\\n2^3^4");
+
+            Assert.That(result, Has.Length.EqualTo(3));
+        }
+
+        [Test]
+        public void CustomDelimShouldWorkAlongsideDefaults()
+        {
+            var result = sut.GetNumListFromString(@"//^\\n2^3,4\\n5");
 
             Assert.That(result, Has.Length.EqualTo(3));
         }
