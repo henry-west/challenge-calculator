@@ -53,5 +53,13 @@ namespace Tests
 
             Assert.That(result, Has.Length.EqualTo(3));
         }
+
+        [Test]
+        public void ShouldSetCustomMultiCharDelim()
+        {
+            var result = sut.GetNumListFromString(@"//[**]\\n2**3**4");
+
+            Assert.That(result, Has.Length.EqualTo(3));
+        }
     }
 }
