@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Xml.Schema;
 
 namespace challenge_calculator
 {
     public class InputFormatter
     {
-        private const string RESERVED_CHARS = @"+*?^$\.[]{}()|/";
         private const string DEFAULT_PATTERN = @",|\n";
 
         private Regex regex;

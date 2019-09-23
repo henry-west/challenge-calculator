@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
 
 namespace challenge_calculator
 {
@@ -53,6 +51,11 @@ namespace challenge_calculator
             {
                 return 0;
             }
+        }
+
+        public string GetFormula()
+        {
+            return string.Join("+", nums);
         }
 
         public int GetSum()

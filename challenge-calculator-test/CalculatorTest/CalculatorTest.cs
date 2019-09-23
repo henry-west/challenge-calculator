@@ -88,5 +88,15 @@ namespace Tests
             Assert.That(sut.GetNumCount(), Is.EqualTo(2));
             Assert.That(sut.GetSum(), Is.EqualTo(1));
         }
+
+        [Test]
+        public void ShouldReturnFormulaWithZeroesForInvalidInputs()
+        {
+            var args = new String[] { "1", "a", "3", "4", "b", "6", "7", "8", "9", "10", "111", "12" };
+            sut.ParseList(args);
+
+            Assert.That(sut.GetNumCount(), Is.EqualTo(12));
+            Assert.That(sut.GetFormula(), Is.EqualTo("1+0+3+4+0+6+7+8+9+10+111+12"));
+        }
     }
 }

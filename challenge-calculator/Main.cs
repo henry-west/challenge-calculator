@@ -16,6 +16,7 @@ namespace challenge_calculator
                 var calc = new Calculator();
                 calc.ParseList(nums);
 
+                Console.WriteLine($"Formula: {calc.GetFormula()}");
                 Console.WriteLine($"Sum: {calc.GetSum()}");
             }
         }
