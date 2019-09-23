@@ -22,16 +22,14 @@ namespace challenge_calculator
         public void SetCustomDelimIfExists(string customDelim)
         {
             customDelim = customDelim.Replace("//", "");
+            var delims = new List<string>() { Regex.Escape(customDelim) };
+
             if (customDelim.StartsWith("["))
             {
-                customDelim = customDelim.Split('[', ']').Where(x => !string.IsNullOrWhiteSpace(x)).First();
+                delims = customDelim.Split('[', ']').Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => Regex.Escape(x)).ToList();
             }
-            regex = new Regex($"{DEFAULT_PATTERN}|{EscapeDelimIfReserved(customDelim)}");
-        }
 
-        private string EscapeDelimIfReserved(string customDelim)
-        {
-            return Regex.Escape(customDelim);
+            regex = new Regex($"{DEFAULT_PATTERN}|{string.Join('|', delims)}");
         }
 
         public string[] GetNumListFromString(string args)

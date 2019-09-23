@@ -61,5 +61,29 @@ namespace Tests
 
             Assert.That(result, Has.Length.EqualTo(3));
         }
+
+        [Test]
+        public void ShouldAllowMultipleMultiCharDelims()
+        {
+            var result = sut.GetNumListFromString(@"//[**][$$]\\n2**3$$4");
+
+            Assert.That(result, Has.Length.EqualTo(3));
+        }
+
+        [Test]
+        public void MultiCharDelimsShouldWorkWithDefaults()
+        {
+            var result = sut.GetNumListFromString(@"//[**][$$]\\n2**3$$4,5");
+
+            Assert.That(result, Has.Length.EqualTo(4));
+        }
+
+        [Test]
+        public void MultiCharDelimsOfVaryingLengthsShouldWork()
+        {
+            var result = sut.GetNumListFromString(@"//[**][$*$][a]\\n2**3$*$4a5");
+
+            Assert.That(result, Has.Length.EqualTo(4));
+        }
     }
 }
