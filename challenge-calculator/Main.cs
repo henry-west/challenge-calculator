@@ -10,9 +10,22 @@ namespace challenge_calculator
         {
             if (args.Length > 0)
             {
-                var inputString = args[0];
                 var formatter = new InputFormatter();
                 var calc = new Calculator();
+
+                var inputString = string.Empty;
+
+                for (var i = 0; i < args.Length; i++)
+                {
+                    if ("+-/*".Contains(args[i]))
+                    {
+                        calc.Operation = args[i][0];
+                    }
+                    else
+                    {
+                        inputString = args[i];
+                    }
+                }
 
                 while (!string.IsNullOrWhiteSpace(inputString))
                 {
@@ -20,7 +33,7 @@ namespace challenge_calculator
                     calc.ParseList(nums);
 
                     Console.WriteLine($"Formula: {calc.GetFormula()}");
-                    Console.WriteLine($"Sum: {calc.GetSum()}");
+                    Console.WriteLine($"Result: {calc.GetResult()}");
 
                     Console.WriteLine("Enter another list or Ctrl+C to exit:");
                     inputString = Console.ReadLine();

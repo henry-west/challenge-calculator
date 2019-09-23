@@ -10,6 +10,7 @@ namespace challenge_calculator
 
         private List<int> nums;
         private readonly List<int> negativeValues;
+        public char Operation = '+';
 
         public Calculator()
         {
@@ -55,12 +56,69 @@ namespace challenge_calculator
 
         public string GetFormula()
         {
-            return string.Join("+", nums);
+            return string.Join(Operation, nums);
+        }
+
+        public object GetResult()
+        {
+            switch (Operation)
+            {
+                case '+':
+                    return GetSum();
+                case '-':
+                    return GetDifference();
+                case '*':
+                    return GetProduct();
+                case '/':
+                    return GetDividend();
+                default:
+                    return 0;
+            }
         }
 
         public int GetSum()
         {
             return nums.Sum();
+        }
+
+        public int GetDifference()
+        {
+            int difference = nums.First();
+            foreach (var num in nums.Skip(1))
+            {
+                difference -= num;
+            }
+
+            return difference;
+        }
+
+        public long GetProduct()
+        {
+            long product = 1;
+            foreach (var num in nums)
+            {
+                product *= num;
+            }
+
+            return product;
+        }
+
+        public float GetDividend()
+        {
+            float dividend = nums.First();
+            foreach (var num in nums.Skip(1))
+            {
+                if (num == 0)
+                {
+                    throw new Exception("Divide-by-zero machine broke");
+                }
+                else
+                {
+                    dividend /= num;
+                }
+            }
+
+            return dividend;
         }
 
         public int GetNumCount()

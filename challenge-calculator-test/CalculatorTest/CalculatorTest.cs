@@ -98,5 +98,32 @@ namespace Tests
             Assert.That(sut.GetNumCount(), Is.EqualTo(12));
             Assert.That(sut.GetFormula(), Is.EqualTo("1+0+3+4+0+6+7+8+9+10+111+12"));
         }
+
+        [Test]
+        public void ShouldGetDifference()
+        {
+            var args = new String[] { "3", "2", "1" };
+            sut.ParseList(args);
+
+            Assert.That(sut.GetDifference(), Is.EqualTo(0));
+        }
+
+        [Test]
+        public void ShouldGetProduct()
+        {
+            var args = new String[] { "3", "2", "2" };
+            sut.ParseList(args);
+
+            Assert.That(sut.GetProduct(), Is.EqualTo(12));
+        }
+
+        [Test]
+        public void ShouldGetDividend()
+        {
+            var args = new String[] { "3", "2", "2" };
+            sut.ParseList(args);
+
+            Assert.That(sut.GetDividend(), Is.EqualTo(0.75));
+        }
     }
 }
