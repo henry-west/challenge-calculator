@@ -78,5 +78,15 @@ namespace Tests
 
             Assert.That(result.Message, Is.EqualTo("Negative numbers not allowed: -3, -12"));
         }
+
+        [Test]
+        public void ShouldSetNumbersOverOneThousandToZero()
+        {
+            var args = new String[] { "1", "1001" };
+            sut.ParseList(args);
+
+            Assert.That(sut.GetNumCount(), Is.EqualTo(2));
+            Assert.That(sut.GetSum(), Is.EqualTo(1));
+        }
     }
 }

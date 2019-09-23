@@ -8,6 +8,8 @@ namespace challenge_calculator
 {
     public class Calculator
     {
+        public const int MAXIMUM_VALUE = 1000;
+
         private List<int> nums;
         private List<int> negativeValues;
 
@@ -38,12 +40,16 @@ namespace challenge_calculator
                     negativeValues.Add(num);
                     return 0;
                 }
+                else if (num > MAXIMUM_VALUE)
+                {
+                    return 0;
+                }
                 else
                 {
                     return num;
                 }
             }
-            catch (Exception)
+            catch (FormatException)
             {
                 return 0;
             }
